@@ -1,0 +1,16 @@
+<h2>Bandana#Showing O/P Log</h2>
+ <p>Displaying logs !</p>
+
+
+ <%=  @log %> <br />
+
+<table>
+<tr>
+<td id="log"></td>
+<td>
+
+ <%= link_to_remote "Refresh", :url=>{:controller => 'bandana', :action => :screen_log}, :update => "log" %>
+
+</td>
+</tr>
+</table>

@@ -1,0 +1,2 @@
+module BandanaHelper
+end

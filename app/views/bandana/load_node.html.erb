@@ -1,0 +1,24 @@
+
+<h2>Bandana#Load Nodes</h2>
+<p>Displaying loaded nodes !</p>
+
+<% @image_tobe_loaded.each do |img| %>
+<%= "Loading" %>
+<%= img %> 
+<%= "on following nodes: "%> <br />
+<% end  %>
+<% @nodes_tobe_loaded.each do |n| %>
+<%= n %> <br />
+<% end  %>
+
+<table>
+<tr>
+<td id="log"></td>
+<td>
+
+ <%= link_to_remote "Refresh", :url=>{:controller => 'bandana', :action => :screen_log}, :update => "log" %>
+
+</td>
+</tr>
+</table>
+

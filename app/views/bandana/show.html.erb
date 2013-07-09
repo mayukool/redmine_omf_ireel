@@ -1,0 +1,36 @@
+<h2>Bandana#Show Nodes</h2>
+
+<p>Hello World!</p>
+<p>Displaying all the nodes on Testbed</p>
+
+<% form_tag 'load_node' do %> 
+ <% @resources.each do |r| %>
+   <%= check_box_tag 'rn[]', r%>
+   <%= r %> <br /> 
+<% end %>
+
+<p>Displaying all images !</p>
+  <% Dir.foreach('/var/lib/omf-images') do |item| %>
+    <%  next if item == '.' or item == '..' %>
+    <%= check_box_tag 'itm[]', item %> 
+    <%= item %> <br />
+  <% end  %>
+<br />
+
+   <div><%= submit_tag 'LOAD' %></div>
+<% end %>
+
+
+
+
+
+
+
+
+<%= link_to("Load", {:controller => 'bandana', :action => 'load_node'}) %>
+<%= link_to("Save",  {:controller => 'bandana', :action => 'save_node', :id => 20}) %><br />
+
+<hr />
+
+
+
