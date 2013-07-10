@@ -44,10 +44,11 @@ class BandanaController < ApplicationController
   def load_node
      # render(:text => "Hello NICTA!!")
      @nodes_tobe_loaded = params[:rn]
+     nodes = @nodes_tobe_loaded * " "
      @image_tobe_loaded = params[:itm]
      # @variable = `omf-5.4 load -i @image_tobe_loaded -t @nodes_tobe_loaded.join(',')`
      #@opi = `ls -lrth`
-     @variable = `screen -d -L -m env -i bash --noprofile --norc /home/mkulkarni/script.sh omf.nicta.node16 omf.nicta.node17 omf.nicta.node18`
+     @variable = `screen -d -L -m env -i bash --noprofile --norc /home/mkulkarni/script.sh #{nodes}`
      # @variable = `omf-5.4 load -i baseline.ndz -t omf.nicta.node16,omf.nicta.node17,omf.nicta.node18`
      # system("omf-5.4 load -i #{@image_tobe_loaded} -t #{@nodes_tobe_loaded.join(',')}")
     # params[:rn].each {|x| render (:text => 'x')}	
